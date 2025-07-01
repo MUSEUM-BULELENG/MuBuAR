@@ -13,6 +13,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
+<script src="https://unpkg.com/aframe-gesture-detector@3.3.0/dist/aframe-gesture-detector.min.js"></script>
+
   <style>
     body {
       margin: 0;
@@ -595,6 +598,8 @@
         activeModel.setAttribute('position', '0 0 0');
         activeModel.setAttribute('rotation', '0 0 0');
         activeModel.setAttribute('scale', data.initialScale);
+        model.setAttribute('gesture-handler', 'minScale: 0.1; maxScale: 3');
+
       }
     }
 
@@ -621,6 +626,8 @@
         model.setAttribute('gltf-model', data.modelSrc);
         model.setAttribute('scale', data.initialScale);
         model.setAttribute('position', '0 0 0');
+        model.setAttribute('gesture-handler', 'minScale: 0.1; maxScale: 3');
+
         marker.appendChild(model);
         scene.appendChild(marker);
 
