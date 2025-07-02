@@ -8,6 +8,9 @@
   <!-- A-Frame & AR.js -->
   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aframe-gesture-detector@4.0.5/dist/gesture-detector.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aframe-super-hands-component@4.0.5/dist/aframe-super-hands.min.js"></script>
+
 
   <!-- Font & CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -119,7 +122,7 @@
     <p id="modelDescriptionContent"></p>
   </div>
 
-  <a-scene embedded arjs>
+  <a-scene embedded arjs vr-mode-ui="enabled: false" gesture-detector>
     <a-entity camera></a-entity>
   </a-scene>
 
@@ -622,10 +625,11 @@
         marker.setAttribute('url', data.markerUrl);
 
         const model = document.createElement('a-entity');
-        model.setAttribute('id', data.modelId);
         model.setAttribute('gltf-model', data.modelSrc);
         model.setAttribute('scale', data.initialScale);
         model.setAttribute('position', '0 0 0');
+        model.setAttribute('gesture-handler', '');
+
         marker.appendChild(model);
         scene.appendChild(marker);
 
