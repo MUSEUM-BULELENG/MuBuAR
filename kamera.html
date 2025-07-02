@@ -103,14 +103,15 @@
     } */
 .minimal-controls {
   position: absolute;
-  bottom: 60px; /* Lebih naik dari bawah */
-  left: 50%;
-  transform: translateX(-50%);
-  display: grid;
-  grid-template-columns: repeat(3, 40px);
-  gap: 8px;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   z-index: 1001;
 }
+
 
 .minimal-controls button {
   background: rgba(255, 255, 255, 0.15);
