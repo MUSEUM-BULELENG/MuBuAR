@@ -627,13 +627,12 @@
         marker.setAttribute('id', data.id);
         marker.setAttribute('type', 'pattern');
         marker.setAttribute('url', data.markerUrl);
-
+        
+        const model = document.createElement('a-entity');
         model.setAttribute('gltf-model', data.modelSrc);
         model.setAttribute('scale', data.initialScale);
         model.setAttribute('position', '0 0 0');
         model.setAttribute('ar-touch-controls', 'rotation: true; scale: true');
-
-
         marker.appendChild(model);
         scene.appendChild(marker);
 
