@@ -629,6 +629,7 @@
         marker.setAttribute('url', data.markerUrl);
         
         const model = document.createElement('a-entity');
+        model.setAttribute('id', data.modelId);
         model.setAttribute('gltf-model', data.modelSrc);
         model.setAttribute('scale', data.initialScale);
         model.setAttribute('position', '0 0 0');
