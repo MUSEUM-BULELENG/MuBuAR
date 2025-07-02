@@ -751,6 +751,17 @@ function showModelDescription(title, content) {
   document.getElementById('descTitle').innerText = title;
   document.getElementById('descText').innerText = content;
 }
+function rotateModel(axis, angle) {
+  if (!activeModel) {
+    console.warn("activeModel belum tersedia!");
+    return;
+  }
+  let rot = activeModel.getAttribute('rotation') || { x: 0, y: 0, z: 0 };
+  if (axis === 'X') rot.x += angle;
+  if (axis === 'Y') rot.y += angle;
+  if (axis === 'Z') rot.z += angle;
+  activeModel.setAttribute('rotation', rot);
+}
 
   </script>
   <!-- Minimal Control Buttons -->
