@@ -29,16 +29,21 @@
       animation: fadeIn 0.8s ease-out forwards;
       opacity: 0;
     }
-    .instruction-note {
-      position: absolute; top: 20px; right: 20px;
-      background: rgba(0,0,0,0.6); color: white;
-      font-size: 0.85em;  /* sebelumnya 1.1em */
-  padding: 8px 12px;  /* untuk menyesuaikan proporsinya */
-      z-index: 1001; text-align: right;
-      backdrop-filter: blur(5px);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      transform: translateX(20px);
-    }
+ .instruction-note {
+  position: absolute; top: 20px; right: 20px;
+  background: rgba(0,0,0,0.6); color: white;
+  padding: 6px 10px; border-radius: 8px;
+  font-size: 0.8em; font-weight: 600;
+  z-index: 1001;
+  max-width: 180px;  /* ✅ agar wrap */
+  text-align: left;  /* ✅ agar lebih rapi */
+  word-wrap: break-word;
+  line-height: 1.2;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transform: translateX(0);
+}
+
     .exit-home-button {
       position: absolute; top: 20px; left: 20px;
       background: #3498DB; color: white;
